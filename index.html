@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDevTask</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        body {
+            background-color: rgb(214, 214, 245);
+        }
+
+        #first_div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: red; */
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            width: auto;
+            border: 4px solid white;
+            border-radius: 15px;
+            background-color: rgb(25, 25, 102);
+        }
+
+        #main_heading {
+            color: rgb(230, 230, 255);
+            text-align: center;
+            padding: 15px;
+            font-family: verdana;
+            font-size: 40px;
+        }
+
+        button {
+            margin: 20px;
+            padding: 10px;
+            background-color: rgb(25, 25, 102);
+            color: rgb(230, 230, 255);
+            font-family: verdana;
+            font-size: 25px;
+            border: 4px solid white;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            scale: 1.05;
+            transition-timing-function: ease-in-out;
+        }
+
+        #timer {
+            background-color: rgb(25, 25, 102);
+            color: white;
+            margin: 20px;
+            padding: 10px;
+            font-size: 25px;
+            border: 4px solid white;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+            height: 30px;
+            width: 100px;
+        }
+
+        #second_div {
+            display: none;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: wheat; */
+        }
+
+        .odd,
+        .even {
+            /* background-color: red; */
+            width: 85%;
+            margin: 3px;
+        }
+
+        .odd {
+            background-color: rgb(153, 0, 153);
+        }
+
+        .even {
+            background-color: rgb(36, 36, 143);
+        }
+
+        .question {
+            color: rgb(230, 230, 255);
+            margin: 16px;
+            padding: 16px;
+            font-family: verdana;
+        }
+
+        #FirstQues {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        #LastQues {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        input {
+            cursor: pointer;
+            accent-color: black;
+        }
+
+
+        h3 {
+            font-size: 24px;
+        }
+
+        label {
+            font-family: arial;
+            font-size: 20px;
+            margin: 10px;
+            /* background-color: green; */
+        }
+
+        #footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            /* background-color: red; */
+        }
+
+        #resultCol {
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        #resultCol h3 {
+            border: 4px solid white;
+            padding: 20px;
+            font-family: verdana;
+            color: white;
+            border-radius: 20px;
+            background-color: rgb(25, 25, 102);
+            /* display: none; */
+        }
+
+        .odd div,
+        .even div {
+            margin: 10px 25px;
+            width: auto;
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid white;
+            color: rgb(230, 230, 255);
+        }
+
+        .odd div:hover,
+        .even div:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first_div">
+        <header>
+            <h1 id="main_heading">Fill out this test based on WebDevTask.mlsc</h1>
+        </header>
+        <div>
+            <button id="first_div_btn" onclick="firstToSecond()">Start your quiz</button>
+            <div id="timer">60 sec</div>
+        </div>
+    </div>
+
+
+    <div id="second_div">
+        <form>
+            <div class="odd" id="FirstQues">
+                <h3 class="question">1. What does the abbreviaton LP stands for in Thapar?</h3>
+                <div><input type="radio" id="LecturePlace" name="LP" value="Lecture Place"><label class="label.."
+                        for="LecturePlace">Lecture
+                        Place</label></div>
+                <div><input type="radio" id="LecturePlaza" name="LP" value="Lecture Plaza"><label class="label.."
+                        for="LecturePlace">Lecture
+                        Plaza</label></div>
+                <div class="correctAns"><input type="radio" id="LecturePavilion" name="LP"
+                        value="Lecture Pavilion"><label class="label.." for="LecturePavilion">Lecture Pavilion</label>
+                </div>
+            </div>
+
+            <div class="even">
+                <h3 class="question">2. What did Saturnalia 2024 commence?</h3>
+                <div><input type="radio" id="15" name="Date" value="15 November"><label class="label.." for="15">15
+                        November</label></div>
+                <div class="correctAns"><input type="radio" id="16" name="Date" value="16 November"><label
+                        class="label.." for="16">16
+                        November</label></div>
+                <div><input type="radio" id="17" name="Date" value="17 November"><label class="label.." for="17">17
+                        November</label></div>
+            </div>
+
+            <div class="odd">
+                <h3 class="question">3. Which among following is not a hostel in Thapar</h3>
+                <div><input type="radio" id="K" name="Hostel" value="K"><label class="label.." for="K">K</label></div>
+                <div><input type="radio" id="C" name="Hostel" value="C"><label class="label.."
+                        for="C">C</label></div>
+                <div class="correctAns"><input type="radio" id="F" name="Hostel" value="F"><label class="label.." for="F">F</label></div>
+            </div>
+
+            <div class="even">
+                <h3 class="question">4. What is the tag-line of new Kravings outlet</h3>
+                <div class="correctAns"><input type="radio" id="happy" name="Kravings" value="Your Happy Place"><label
+                        class="label.." for="happy">Your Happy Place</label></div>
+                <div><input type="radio" id="quality" name="Kravings" value="Get Quality Food"><label class="label.. "
+                        for="quality">Get
+                        Quality Food</label></div>
+                <div><input type="radio" id="memories" name="Kravings" value="Make some Memories"><label
+                        class="label.. " for="memories">Make
+                        some Memories</label></div>
+            </div>
+
+            <div class="odd" id="LastQues">
+                <h3 class="question">5. Which is the best tech society in Thapar</h3>
+                <div class="correctAns"><input type="radio" id="MLSC" name="Soc" value="MLSC"><label class="label.."
+                        for="MLSC">MLSC</label>
+                </div>
+                <div><input type="radio" id="MLSCC" name="Soc" valueMLSCC"><label class="label.."
+                        for="MLSCC">MLSCC</label></div>
+                <div><input type="radio" id="MLSCCC" name="Soc" value="MLSCCC"><label class="label.."
+                        for="MLSCCC">MLSCCC</label></div>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="footer">
+        <button id="last_div_btn1" onclick="submitQuiz()">Submit</button>
+        <button id="last_div_btn2" onclick="quizReset()">Reset</button>
+    </div>
+    <div id="resultCol">
+        <h3 id="appendInto"></h3>
+    </div>
+
+
+
+    <script>
+        let timer;
+        function firstToSecond() {
+            let first = document.getElementById("first_div_btn");
+            first.style.display = "none";
+            let show1 = document.getElementById("timer");
+            show1.style.display = "block";
+            let show2 = document.getElementById("second_div");
+            show2.style.display = "block";
+            let show3 = document.getElementById("footer");
+            show3.style.display = "flex";
+            timer = setInterval(makeTimer, 1000);
+        }
+        let max = 60;
+        function makeTimer() {
+            let sec = document.getElementById("timer");
+            sec.innerText = max + " sec";
+            console.log(max);
+            max--;
+            if (max == 0) {
+                alert("Time is up");
+                location.reload();
+            }
+        }
+
+        function quizReset() {
+            document.getElementsByTagName("form").reset();
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            let score = 0;
+            const correctAnsArr = ["Lecture Pavilion", "16 November", "F", "Your Happy Place", "MLSC"];
+            const quesArr = ["LP", "Date", "Hostel", "Kravings", "Soc"];
+            let toStoreSelected = [];
+            let selectedOption = "";
+            for (let v = 0; v <= 5; v++) {
+                let radios = document.getElementsByName(quesArr[v]);
+                for (const radio of radios) {
+                    if (radio.checked) {
+                        selectedOption = radio.value;
+                        toStoreSelected[v] = selectedOption;
+                        break;
+                    }
+                }
+                if (selectedOption === correctAnsArr[v]) {
+                    score++;
+                }
+            }
+
+            let final = document.getElementById("appendInto");
+            final.innerText = `Your score is ${score}/5`
+            {
+                if (score == 5 || score == 4) {
+                    final.style.backgroundColor = "rgb(0, 179, 0)";
+                }
+                else if (score == 3 || score == 2) {
+                    final.style.backgroundColor = "rgb(204, 204, 0)";
+                }
+                else {
+                    final.style.backgroundColor = "rgb(204, 0, 0)";
+                }
+            }
+            let show1 = document.getElementById("timer");
+            show1.style.display = "none";
+            let show2 = document.getElementById("second_div");
+            show2.style.display = "block";
+            let show3 = document.getElementById("footer");
+            show3.style.display = "none";
+            let show4 = document.getElementById("resultCol");
+            show4.style.display = "flex"
+            final.style.display = "block";
+
+            let correctAnsCollect = document.getElementsByClassName("correctAns");
+            for (let v = 0; v < 5; v++) {
+                correctAnsCollect[v].style.backgroundColor = "rgb(0, 179, 0)";
+            }
+
+            let selectedLabel = [];
+            let labels = document.getElementsByClassName("label..")
+            for (let a = 0; a < 15; a++) {
+                let labelUnderConsideration = labels[a];
+                for (let v = 0; v < 5; v++) {
+                    if (labelUnderConsideration.innerText == toStoreSelected[v]) {
+                        selectedLabel[v] = labelUnderConsideration;
+                        break;
+                    }
+                }
+            }
+            console.log(selectedLabel)
+            console.log(correctAnsCollect)
+
+            for (let a = 0; a < 5; a++) {
+                let ele = selectedLabel[a];
+                let parent = ele.parentElement;
+                console.log(parent)
+                console.log(correctAnsCollect[a])
+                if (parent !== correctAnsCollect[a]) {
+                    correctAnsCollect[a].style.backgroundColor = "rgb(0, 179, 0)";
+                    console.log(parent)
+                    parent.style.backgroundColor = "rgb(204, 0, 0)";
+                } else if (parent == correctAnsCollect[a]) {
+                    parent.style.backgroundColor = "rgb(0, 179, 0)";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
